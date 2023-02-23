@@ -14,7 +14,8 @@
     "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
     "prepublish": "npm run build",
     "predeploy": "npm run demo:prod",
-    "deploy": "gh-pages -d demo"
+    "deploy": "gh-pages -d demo",
+    "release": "npm run build && changeset publish"
   },
   "keywords": [
     "otp",
