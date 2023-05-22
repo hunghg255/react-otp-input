@@ -9,9 +9,7 @@ A fully customizable, one-time password input component for the web built with R
 
 ![see here](https://media.giphy.com/media/lN98dFU6h3oP0wWS5x/giphy.gif)
 
-[Live Demo](https://devfolioco.github.io/react-otp-input)
-
-[CodeSandbox](https://codesandbox.io/s/react-otp-input-demo-v2-1iy52)
+[Live Demo](https://reactjs-otp-input-demo.vercel.app/)
 
 ## Installation
 
@@ -34,7 +32,7 @@ export default const App {
 
   const handleChange = (otp) => setOtp({ otp });
 
-    return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
+  return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
 }
 ```
 
