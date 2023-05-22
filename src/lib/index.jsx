@@ -101,7 +101,7 @@ class SingleOtpInput extends PureComponent {
             hasErrored && errorStyle
           )}
           type={this.getType()}
-          maxLength="1"
+          // maxLength='1'
           ref={this.input}
           disabled={isDisabled}
           value={value ? value : ''}
@@ -220,8 +220,14 @@ class OtpInput extends Component {
     });
   };
 
-  handleOnChange = (e) => {
+  handleOnChange = (idx) => (e) => {
     const { value } = e.target;
+
+    // Fix Fill value
+    if (idx === 0 && value.length === this.props.numInputs) {
+      this.handleOtpChange(value.split(''));
+      return;
+    }
 
     if (this.isInputValueValid(value)) {
       this.changeCodeAtFocus(value);
@@ -298,7 +304,7 @@ class OtpInput extends Component {
           index={i}
           focus={activeInput === i}
           value={otp && otp[i]}
-          onChange={this.handleOnChange}
+          onChange={this.handleOnChange(i)}
           onKeyDown={this.handleOnKeyDown}
           onInput={this.handleOnInput}
           onPaste={this.handleOnPaste}
