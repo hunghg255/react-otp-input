@@ -1,20 +1,9 @@
 {
   "name": "reactjs-otp-input",
-  "version": "1.0.4",
+  "version": "2.0.4",
   "description": "A fully customizable, one-time password input component for the web built with React",
-  "main": "lib/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run build:watch\" \"npm run demo:dev\"",
-    "build": "babel src/lib -d lib",
-    "build:watch": "babel src/lib -w -d lib",
-    "demo:dev": "webpack-dev-server --mode development",
-    "demo:build": "webpack --mode production",
-    "format": "prettier --write \"**/*.{html,css,js,jsx}\"",
-    "lint": "eslint 'src/**/*.{js,jsx}' --quiet",
-    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
-    "prepublish": "npm run build",
-    "predeploy": "npm run demo:prod",
-    "deploy": "gh-pages -d demo",
+    "build": "rollup -c",
     "release": "npm run build && changeset publish"
   },
   "keywords": [
@@ -22,42 +11,43 @@
     "input",
     "code",
     "passcode",
-    "component"
+    "component",
+    "react",
+    "reactjs"
   ],
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "typings": "typings/index.d.ts",
   "devDependencies": {
-    "@babel/cli": "7.14.3",
-    "@babel/core": "7.14.3",
-    "@babel/eslint-parser": "7.14.4",
-    "@babel/preset-env": "7.14.4",
-    "@babel/preset-react": "7.13.13",
-    "@changesets/cli": "^2.26.0",
-    "babel-loader": "8.2.2",
-    "concurrently": "6.2.0",
-    "css-loader": "^3.6.0",
-    "eslint": "7.27.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.23.3",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.23.2",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "gh-pages": "3.2.3",
-    "html-webpack-plugin": "^4.5.2",
-    "prettier": "2.3.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "style-loader": "^0.21.0",
-    "webpack": "4.46.0",
-    "webpack-cli": "3.3.12",
-    "webpack-dev-server": "3.11.2"
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/node": "^20.2.3",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "rollup": "^2.60.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^4.7.4"
   },
-  "author": "",
-  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "author": "hunghg255",
+  "license": "ISC",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "homepage": "https://reactjs-otp-input-demo.vercel.app/",
   "repository": {
     "type": "git",
@@ -65,5 +55,9 @@
   },
   "bugs": {
     "url": "https://github.com/hunghg255/react-otp-input/issues"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

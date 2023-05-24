@@ -15,17 +15,18 @@ A fully customizable, one-time password input component for the web built with R
 
 [![NPM](https://nodei.co/npm/reactjs-otp-input.png?compact=true)](https://nodei.co/npm/reactjs-otp-input/)
 
+
 #### To install the latest stable version:
 
 ```
-npm install --save reactjs-otp-input
+npm install --save reactjs-otp-input@latest
 ```
 
 #### Basic usage:
 
 ```jsx
 import React, { Component } from 'react';
-import OtpInput from 'react-otp-input';
+import { OtpInput } from 'react-otp-input';
 
 export default const App {
   const [otp, setOtp] = useState('');
@@ -174,3 +175,5 @@ export default const App {
 ```
 npm run dev
 ```
+
+### Support auto fill on mobile

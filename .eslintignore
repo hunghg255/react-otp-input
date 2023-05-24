@@ -3,3 +3,4 @@ node_modules/
 
 # Config
 webpack.config.js
+src/index.tsx
