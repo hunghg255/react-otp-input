@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
 const BACKSPACE = 8;
 const LEFT_ARROW = 37;
@@ -140,7 +140,11 @@ const SingleOtpInput = (props: ISingleOtpInput) => {
   );
 };
 
-const OtpInput = (props: IOtpInput) => {
+export type OtpInputHandle = {
+  focusInput: (index: number) => void;
+};
+
+const OtpInput = forwardRef<OtpInputHandle, IOtpInput>((props, ref) => {
   const {
     numInputs = 4,
     onChange = (otp: string) => console.log(otp),
@@ -182,6 +186,12 @@ const OtpInput = (props: IOtpInput) => {
 
     return '';
   }, [placeholder]);
+
+  useImperativeHandle(ref, () => {
+    return {
+      focusInput,
+    };
+  });
 
   // Helper to return OTP from input
   const handleOtpChange = (otp: string[]) => {
@@ -347,6 +357,6 @@ const OtpInput = (props: IOtpInput) => {
       })}
     </div>
   );
-};
+});
 
 export { OtpInput };

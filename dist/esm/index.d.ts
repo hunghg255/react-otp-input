@@ -19,5 +19,8 @@ interface IOtpInput {
     'data-testid'?: string;
     'data-cy'?: string;
 }
-declare const OtpInput: (props: IOtpInput) => import("react/jsx-runtime").JSX.Element;
+export type OtpInputHandle = {
+    focusInput: (index: number) => void;
+};
+declare const OtpInput: React.ForwardRefExoticComponent<IOtpInput & React.RefAttributes<OtpInputHandle>>;
 export { OtpInput };

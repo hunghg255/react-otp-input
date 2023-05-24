@@ -1,4 +1,3 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
 import React from 'react';
 
 interface IOtpInput {
@@ -21,6 +20,9 @@ interface IOtpInput {
     'data-testid'?: string;
     'data-cy'?: string;
 }
-declare const OtpInput: (props: IOtpInput) => react_jsx_runtime.JSX.Element;
+type OtpInputHandle = {
+    focusInput: (index: number) => void;
+};
+declare const OtpInput: React.ForwardRefExoticComponent<IOtpInput & React.RefAttributes<OtpInputHandle>>;
 
-export { OtpInput };
+export { OtpInput, OtpInputHandle };
