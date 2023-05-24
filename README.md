@@ -9,6 +9,10 @@ A fully customizable, one-time password input component for the web built with R
 
 ![see here](https://media.giphy.com/media/lN98dFU6h3oP0wWS5x/giphy.gif)
 
+### Support auto fill on mobile (safari, chrome....)
+![see here](https://res.cloudinary.com/hunghg255/image/upload/v1684903469/rc-otp_wabj3h.jpg)
+
+
 [Live Demo](https://reactjs-otp-input-demo.vercel.app/)
 
 ## Installation
@@ -20,6 +24,11 @@ A fully customizable, one-time password input component for the web built with R
 
 ```
 npm install --save reactjs-otp-input@latest
+```
+Or `yarn`
+
+```
+yarn add reactjs-otp-input
 ```
 
 #### Basic usage:
@@ -36,6 +45,16 @@ export default const App {
   return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
 }
 ```
+
+
+## Development
+
+#### To run the development server:
+
+```
+npm run dev
+```
+
 
 ## API
 
@@ -168,12 +187,3 @@ export default const App {
   </tr>
 </table>
 
-## Development
-
-#### To run the development server:
-
-```
-npm run dev
-```
-
-### Support auto fill on mobile
