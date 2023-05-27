@@ -132,7 +132,7 @@ const SingleOtpInput = (props: ISingleOtpInput) => {
         type={typeInput}
         ref={input}
         disabled={isDisabled}
-        value={value ? value : ''}
+        value={value || ''}
         {...rest}
       />
       {!isLastChild && <>{separator}</>}
@@ -185,7 +185,7 @@ const OtpInput = forwardRef<OtpInputHandle, IOtpInput>((props, ref) => {
     }
 
     return '';
-  }, [placeholder]);
+  }, [numInputs, placeholder]);
 
   useImperativeHandle(ref, () => {
     return {
@@ -297,17 +297,17 @@ const OtpInput = forwardRef<OtpInputHandle, IOtpInput>((props, ref) => {
   const handleOnInput = (e: any) => {
     if (isInputValueValid(e.target.value)) {
       focusNextInput();
-    } else {
-      // This is a workaround for dealing with keyCode "229 Unidentified" on Android.
+      return;
+    }
+    // This is a workaround for dealing with keyCode "229 Unidentified" on Android.
 
-      if (!isInputNum) {
-        const { nativeEvent } = e;
+    if (!isInputNum) {
+      const { nativeEvent } = e;
 
-        if (nativeEvent.data === null && nativeEvent.inputType === 'deleteContentBackward') {
-          e.preventDefault();
-          changeCodeAtFocus('');
-          focusPrevInput();
-        }
+      if (nativeEvent.data === null && nativeEvent.inputType === 'deleteContentBackward') {
+        e.preventDefault();
+        changeCodeAtFocus('');
+        focusPrevInput();
       }
     }
   };

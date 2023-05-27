@@ -4,7 +4,8 @@
   "description": "A fully customizable, one-time password input component for the web built with React",
   "scripts": {
     "build": "rollup -c",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "lint": "eslint --ext .ts,.tsx src --color"
   },
   "keywords": [
     "otp",
@@ -28,7 +29,20 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "babel-loader": "^8.2.3",
-    "html-webpack-plugin": "^5.5.0",
+    "eslint": "^8.31.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-import-resolver-typescript": "^3.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-unicorn": "^43.0.2",
+    "prettier": "^2.8.8",
     "rollup": "^2.60.0",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -37,7 +51,8 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
