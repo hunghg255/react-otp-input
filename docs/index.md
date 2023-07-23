@@ -1,9 +1,4 @@
-# reactjs-otp-input
-
-[![npm version](https://badge.fury.io/js/reactjs-otp-input.svg)](https://badge.fury.io/js/reactjs-otp-input) [![npm](https://img.shields.io/npm/dw/reactjs-otp-input.svg?logo=npm)](https://www.npmjs.com/package/reactjs-otp-input) [![npm](https://img.shields.io/bundlephobia/minzip/reactjs-otp-input)](https://www.npmjs.com/package/reactjs-otp-input)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# React OTP Input
 
 A fully customizable, one-time password input component for the web built with React.
 
@@ -11,13 +6,6 @@ A fully customizable, one-time password input component for the web built with R
 
 ## Support auto fill on mobile (safari, chrome....)
 ![see here](https://res.cloudinary.com/hunghg255/image/upload/v1690099530/react-otp-input_r7ukv1.png)
-
-
-[Live Demo](https://reactjs-otp-input-demo.vercel.app/)
-
-## Installation
-
-[![NPM](https://nodei.co/npm/reactjs-otp-input.png?compact=true)](https://nodei.co/npm/reactjs-otp-input/)
 
 
 ## To install the latest stable version:
@@ -33,7 +21,8 @@ yarn add reactjs-otp-input
 
 ## Basic usage:
 
-```jsx
+```tsx
+
 import React, { Component } from 'react';
 import { OtpInput } from 'react-otp-input';
 
@@ -44,15 +33,8 @@ export default const App {
 
   return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
 }
-```
-
-
-## To run the development server:
 
 ```
-npm run dev
-```
-
 
 ## API
 
