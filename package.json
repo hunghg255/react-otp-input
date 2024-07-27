@@ -1,79 +1,86 @@
 {
   "name": "reactjs-otp-input",
-  "version": "2.0.8",
+  "version": "2.0.10",
   "description": "A fully customizable, one-time password input component for the web built with React",
   "scripts": {
     "build": "rollup -c",
-    "release": "npm run build && changeset publish",
-    "lint": "eslint --ext .ts,.tsx src --color"
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "prepublishOnly": "npm run build",
+    "release": "bumpp",
+    "verify-commit": "verify-commit-msg",
+    "prepare": "git-scm-hooks"
   },
   "keywords": [
+    "nextjs",
+    "next otp",
     "otp",
     "input",
     "code",
     "passcode",
     "component",
     "react",
-    "reactjs"
+    "reactjs",
+    "iphone",
+    "autofill"
   ],
   "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
-    "@changesets/cli": "^2.26.1",
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.0.6",
-    "@rollup/plugin-terser": "^0.4.1",
-    "@rollup/plugin-typescript": "^8.3.0",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.25.0",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^8.5.0",
     "@types/node": "^20.2.3",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
-    "@vitejs/plugin-react": "^4.0.0",
-    "babel-loader": "^8.2.3",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.5.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "babel-loader": "^8.3.0",
+    "bumpp": "^9.4.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-import-resolver-typescript": "^3.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.5",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-unicorn": "^43.0.2",
+    "git-scm-hooks": "^0.0.11",
     "prettier": "^2.8.8",
-    "rollup": "^2.60.0",
-    "rollup-plugin-dts": "^4.0.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^4.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.5",
+    "verify-commit-msg": "^0.0.14"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
-    "dist",
-    "LICENSE"
+    "dist"
   ],
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "author": "hunghg255",
   "license": "ISC",
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not op_mini all"
-  ],
   "homepage": "https://reactjs-otp-input-demo.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hunghg255/react-otp-input"
+    "url": "https://github.com/hunghg255/reactjs-otp-input"
   },
   "bugs": {
-    "url": "https://github.com/hunghg255/react-otp-input/issues"
+    "url": "https://github.com/hunghg255/reactjs-otp-input/issues"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  },
+  "git-hooks": {
+    "pre-commit": "npm run lint",
+    "commit-msg": "npm run verify-commit"
   }
 }
