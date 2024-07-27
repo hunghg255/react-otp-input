@@ -20,8 +20,8 @@ A fully customizable, one-time password input component for the web built with R
 ![see here](https://media.giphy.com/media/lN98dFU6h3oP0wWS5x/giphy.gif)
 
 ## Support auto fill on mobile (safari, chrome....)
-![see here](https://res.cloudinary.com/hunghg255/image/upload/v1690099530/react-otp-input_r7ukv1.png)
 
+![see here](https://res.cloudinary.com/hunghg255/image/upload/v1690099530/react-otp-input_r7ukv1.png)
 
 [Live Demo](https://reactjs-otp-input-demo.vercel.app/)
 
@@ -29,40 +29,32 @@ A fully customizable, one-time password input component for the web built with R
 
 [![NPM](https://nodei.co/npm/reactjs-otp-input.png?compact=true)](https://nodei.co/npm/reactjs-otp-input/)
 
-
 ## To install the latest stable version:
 
 ```
-npm install --save reactjs-otp-input@latest
-```
-Or `yarn`
-
-```
-yarn add reactjs-otp-input
+pnpm install reactjs-otp-input@latest
 ```
 
 ## Basic usage:
 
 ```jsx
 import React, { Component } from 'react';
-import { OtpInput } from 'react-otp-input';
+import { OtpInput } from 'reactjs-otp-input';
 
-export default const App {
+const App = () => {
   const [otp, setOtp] = useState('');
 
-  const handleChange = (otp) => setOtp({ otp });
+  const handleChange = (otp) => setOtp(otp);
 
   return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
-}
+};
 ```
-
 
 ## To run the development server:
 
 ```
 npm run dev
 ```
-
 
 ## API
 
